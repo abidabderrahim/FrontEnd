@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Auto Text</title>
+</head>
+<body>
+    <p>
+        <span class="js">JavaScript</span> Is <span class="text"></span><span class="cursor">|</span>
+    </p>
+    <script>
+        const text = document.querySelector('.text');
+
+        let words = ['col', 'good', 'awesome'];
+        const typing = 100;
+        const erasing = 100;
+        const newletter = 1000;
+        let index = 0;
+        let charindex = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+            if(words.length){
+                setTimeout(type, newletter);
+            }
+        });
+
+        const type = () =>{
+            if (charindex < words[index].length){
+                text.textContent += words[index].charAt(charindex);
+                charindex++;
+                setTimeout(type, typing);
+            }else{
+                setTimeout(erase, newletter);
+            }
+        };
+        const erase = () => {
+            if(charindex > 0){
+                text.textContent = words[index].substring(0, charindex - 1);
+                charindex--;
+                setTimeout(erase, erasing);
+            }else{
+                index++;
+                if (index >= words.length){
+                    index = 0;
+                }
+                setTimeout(type , text + 1100);
+            }
+        };
+    </script>
+</body>
+</html>

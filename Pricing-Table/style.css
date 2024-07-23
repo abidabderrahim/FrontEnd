@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 245, 245);
+    padding: 20px;
+}
+.container{
+    max-width: 1090px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.container .card{
+    width: calc(33% - 20px);
+    background-color: #fff;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .card .top{
+    height: 130px;
+    color: #fff;
+    padding: 12px 0 0 0;
+    clip-path: polygon(0 0, 100% 0, 100% 53%, 49% 100%, 0 53%);
+}
+.container .card .top .title{
+    font-size: 27px;
+    font-weight: 600;
+}
+.container .card .top .price-info{
+    margin-top: -1px;
+}
+.container .card .top  .price-info .price{
+    font-size: 45px;
+}
+.container .card .info{
+    font-size: 16px;
+    margin-top: 20px;
+}
+.container .card .details .plan{
+    margin-top: 25px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.container .card .details .plan::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    left: 0;
+    top: -12px;
+}
+.container .card .plan i{
+    margin-top: 5px;
+}
+.container .card button{
+    outline: none;
+    border: none;
+    height: 42px;
+    display: block;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.container .one .top,
+.container .one button{
+    background-color: rgb(32, 216, 32);
+}
+.container .two .top,
+.container .two button{
+    background-color: rgb(84, 84, 248);
+}
+.container .three .top,
+.container .three button{
+    background-color: rgb(245, 75, 75);
+}
+.container .card button:hover{
+    filter: brightness(90%);
+}
+@media (max-width: 1000px){
+    .container .card{
+        width: calc(50%- 20px);
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 715px){
+    .container .card{
+        width: 100%;
+    }
+}

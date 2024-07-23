@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: rgb(75, 75, 75);
+    color: #fff;
+}
+.content{
+    padding: 4rem;
+}
+section{
+    border: 2px solid white;
+    padding: 20px;
+    margin: 20px 0;
+}
+section h1{
+    margin: 10px 0;
+}
+.scroll{
+    height: 5px;
+    width: calc(100% - 6em);
+    position: fixed;
+    top: 10px;
+    left: 3em;
+    border-radius: 3px;
+}
+.scroll .progress{
+    height: 100%;
+    width: 0;
+    border-radius: 3px;
+    width: 20px;
+    background: linear-gradient(30deg, #21d4fd, #b721ff);
+    transition: width 0.1s;
+}

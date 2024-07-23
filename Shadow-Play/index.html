@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shadow Play</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div id="box"></div>
+            <div class="sliders">
+                <input type="range" id="sld1" value="0" min="-5" max="5">
+                <input type="range" id="sld2" value="0" min="-5" max="5">
+                <input type="range" id="sld3" value="10" min="0" max="10">
+                <input type="range" id="sld4" value="0" min="0" max="10">
+            </div>
+            <div id="output">
+                <input type="text" id="css-code" readonly>
+                <button id="copy" type="button">Copy</button>
+            </div>
+            <div class="colors">
+                <input type="color" id="shadow">
+            </div>
+        </div>
+    </div>
+    <script>
+        let sliders = document.querySelectorAll('input[type="range"]');
+        let colors = document.querySelectorAll('input[type=color]');
+        let output = document.getElementById('css-code');
+        let btncpoy = document.getElementById('copy');
+        sliders.forEach(slider => {
+            slider.addEventListener('input', createBox)
+        });
+        colors.forEach(color => {
+            color.addEventListener('change', createBox)
+        });
+        btncpoy.addEventListener('click', () => {
+            output.select();
+            document.execCommand('copy');
+            alert('code copied')
+        });
+        function createBox(){
+            let x = sliders[0].value;
+            let y = sliders[1].value;
+            let blur = sliders[2].value;
+            let spred = sliders[3].value;
+            let shadow = colors[0].value;
+            let boxshadow = `${x}px ${y}px ${blur}px ${spred}px`;
+            document.getElementById('box').style.cssText  = `box-shadow: ${boxshadow} ${shadow}`;
+            output.value = `box-shadow: ${boxshadow};`;        
+        }
+        createBox();
+    </script>
+</body>
+</html>

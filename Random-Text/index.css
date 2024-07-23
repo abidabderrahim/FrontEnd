@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: url("pexels-negative-space-160107.jpg") no-repeat center center/ cover;
+}
+.container{
+    width: 550px;
+    height: 400px;
+}
+.header{
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgb(54, 54, 54, 0.5);
+    padding: 5px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px;
+}
+.main{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(54, 54, 54, 0.5);
+    color: white;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 0 5px;
+}
+.main .text-area{
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+.main .lang{
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    margin: 20px;
+}
+.button-area button{
+    background-color: rgb(54, 54, 54, 0.5);
+    color: white;
+    padding: 10px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.button-area button:active{
+    background-color: rgb(91, 93, 94);
+}

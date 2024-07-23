@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Search Word</title>
+</head>
+<body>
+    <div id="searchbox">
+        <input type="text" id="input" placeholder="Search">
+        <button id="btn" type="button">Search</button>
+    </div>
+    <div class="container" id="content">
+        <p id="p">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor labore tempora fugit magni et voluptas eveniet nemo adipisci voluptatibus reiciendis veritatis dolorum maxime, neque iure porro earum voluptates pariatur maiores?
+            A assumenda velit corrupti pariatur! Itaque minus voluptas id ab inventore vel distinctio veritatis voluptatibus tenetur eaque at doloremque illum, quis similique laudantium aut eos dolor voluptatem provident dolorem iste.
+            Velit esse officiis odit voluptate, cum non dignissimos omnis similique iusto itaque. Atque placeat aliquid distinctio doloremque praesentium eius, tenetur magni vitae exercitationem id blanditiis autem? Inventore doloribus eaque veritatis.
+            Excepturi saepe quo, tenetur autem ad, est at eum doloremque officiis alias sapiente? Ducimus, nulla eos commodi quisquam corrupti ea dicta maxime, tempora, error deleniti quod cupiditate nostrum eveniet eaque.
+        </p>
+    </div>
+    <script>
+        const p = document.getElementById('p');
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            let input = document.getElementById('input').value;
+            if (input !== ""){
+                let regex = new RegExp(input, 'gi');
+                p.innerHTML = p.textContent.replace(regex, "<mark>$&</mark>")
+            }
+        });
+    </script>
+</body>
+</html>

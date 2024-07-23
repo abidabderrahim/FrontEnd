@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>OTP</title>
+</head>
+<body>
+    <div class="container">
+        <h3 class="title">OTP Verification</h3>
+        <p class="sub-title">Code Hase Been Send To
+            <span class="number">+212633454556</span>
+        </p>
+        <div class="wrapper">
+            <input type="number" class="field 1">
+            <input type="number" class="field 2">
+            <input type="number" class="field 3">
+            <input type="number" class="field 4">
+            <input type="number" class="field 5">
+        </div>
+        <button class="resend" type="button">Resend</button>
+        <button class="resend verify-btn" type="button">Verify</button>
+    </div>
+    <script>
+        const inputs = document.querySelectorAll('.field');
+        inputs.forEach((field) => {
+            field.addEventListener("input", handleInput);
+        });
+        function handleInput(e){
+            let input = e.target;
+            if(inputs.value.length >= 1){
+                let next = input.next;
+                return next && next.focus();
+            }
+        }
+    </script>
+</body>
+</html>

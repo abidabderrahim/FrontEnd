@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Decimal To Binary</title>
+</head>
+<body>
+    <section class="container">
+        <input type="number" id="number" name="number">
+        <button type="button" class="btn">Check</button>
+    </section>
+    <section class="result"></section>
+    <script>
+        let result = document.querySelector('.btn');
+        result.addEventListener('click', decimal);
+        function decimal(){
+            let decimal = document.getElementById('number').value;
+            let tempdecimal;
+            let rem = 0;
+            let binary = 0;
+            let place = 1;
+            tempdecimal = decimal;
+            while(tempdecimal > 0){
+                rem = tempdecimal % 2;
+                binary = binary + rem * place;
+                tempdecimal = parseInt(tempdecimal / 2);
+                place = place * 10;
+            }
+            const h1 = document.createElement('h1');
+            h1.innerHTML = `${binary}`;
+            const container = document.querySelector('.result'); 
+            container.append(h1);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* profile card css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 370px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.profile::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 36%;
+    width: 100%;
+    border-radius: 24px 24px 0 0;
+    background-color: slategray;
+}
+.image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: slategrey;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+.image .img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.profile .data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+.data .name{
+    font-size: 22px;
+    font-weight: 500;
+}
+.data .job{
+    font-size: 15px;
+    font-weight: 500;
+}
+.profile .media{
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.media .link{
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    margin: 0 8px;
+}
+.link :last-child{
+    width: 34px;
+}
+.profile .buttons{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+.buttons .button{
+    margin: 0 10px;
+    padding: 8px 24px;
+    border-radius: 24px;
+    border: none;
+    background-color: slategray;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+.buttons .button:hover{
+    background-color: rgb(143, 148, 153);
+}
+.heart{
+    width: 15px;
+}
+.profile .actions{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+.actions .action{
+    display: flex;
+    align-items: center;
+    color: #333;
+    padding: 0 20px;
+    border-right: 2px solid #e7e7e7;
+}
+.action:last-child{
+    border-right: none;
+}

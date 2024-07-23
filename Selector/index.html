@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Selector</title>
+</head>
+<body>
+    <header>
+        <div class="selector">
+            <div id="field">
+                <p id="text">Select Socila Media!</p>
+                <img src="code_FILL0_wght400_GRAD0_opsz24.svg" alt="" id="icon">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="facebook.png" alt="">
+                    <p>facebook</p>
+                </li>
+                <li class="options">
+                    <img src="whatsapp.png" alt="">
+                    <p>whatsapp</p>
+                </li>
+                <li class="options">
+                    <img src="youtube.png" alt="">
+                    <p>youtube</p>
+                </li>
+                <li class="options">
+                    <img src="twitter.png" alt="">
+                    <p>twitter</p>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        let field = document.getElementById('field');
+        let text = document.getElementById('text');
+        let list = document.getElementById('list');
+        let icon = document.getElementById('icon');
+        let options = document.getElementsByClassName('options');
+        field.addEventListener('click', () =>{
+            list.classList.toggle('hide');
+            icon.classList.toggle('rotate');
+        });
+        for (option of options){
+            option.onclick = function(){
+                text.textContent = this.textContent;
+                list.classList.toggle('hide');
+                icon.classList.toggle('rotate');
+            }
+        }
+    </script>
+</body>
+</html>

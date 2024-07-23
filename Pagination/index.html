@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pagination</title>
+</head>
+<body>
+    <div class="container">
+        <button type="button" id="btn" class="button">
+            <img src="code_FILL0_wght400_GRAD0_opsz24.svg" alt="c">
+        </button>
+        <button type="button" id="btn1" class="button prevNext" disabled>
+            <img src="code_FILL0_wght400_GRAD0_opsz24.svg" alt="c">
+        </button>
+        <div class="links">
+            <a href="#" class="link active">1</a>
+            <a href="#" class="link">2</a>
+            <a href="#" class="link">3</a>
+            <a href="#" class="link">4</a>
+            <a href="#" class="link">5</a>
+        </div>
+        <button type="button" id="btn2" class="button prevNext">
+            <img src="code_FILL0_wght400_GRAD0_opsz24.svg" alt="c">
+        </button>
+        <button type="button" id="btn3" class="button">
+            <img src="code_FILL0_wght400_GRAD0_opsz24.svg" alt="c">
+        </button>
+    </div>
+    <script>
+        let btn = document.querySelector("#btn");
+        let prevNext = document.querySelectorAll(".prevNext");
+        let btn3 = document.querySelector("#btn3");
+        let nums = document.querySelectorAll(".link");
+        
+        let current = 0;
+        nums.forEach((num, numIndex) => {
+            num.addEventListener('click', (e) => {
+                e.preventDefault();
+                current = numIndex;
+                document.querySelector(".active").classList.remove("active");
+                num.classList.add("active")
+                updatbtn();
+            });
+        });
+        prevNext.forEach((button) => {
+            button.addEventListener('click', (e) => {
+                current += e.target.id === "btn2" ? 1 : -1;
+                nums.forEach((num, numIndex) =>{
+                    num.classList.toggle("active", numIndex === current);
+                    updatbtn();
+                });
+            });
+        });
+        const updatbtn = () => {
+            if (current === 4){
+                btn3.disabled = true;
+                prevNext[1].disabled = true;
+            }else if(current === 0){
+                btn.disabled = true;
+                prevNext[0].disabled = true;   
+            }else{
+                btn3.disabled = false;
+                prevNext[1].disabled = false;
+                btn.disabled = false;
+                prevNext[0].disabled = false;
+            }
+        };
+        btn.addEventListener('click', () => {
+            document.querySelector(".active").classList.remove("active");
+            nums[0].classList.add("active");
+        })
+    </script>
+</body>
+</html>

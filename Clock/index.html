@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Abderrahim Abid">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hr">00</span>
+                <span>:</span>
+                <span id="mn">00</span>
+                <span>:</span>
+                <span id="sd">00</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hr = document.getElementById('hr');
+        let mn = document.getElementById('mn');
+        let sd = document.getElementById('sd');
+        
+        setInterval(() => {
+            let currentTime = new Date();
+            // getHoures();
+            // getMinutes();
+            // getSecconds();
+            hr.textContent = (currentTime.getHours() < 10 ? "0" : "") + currentTime.getHours();
+            mn.textContent = (currentTime.getMinutes() < 10 ? "0" : "") + currentTime.getMinutes();
+            sd.textContent = (currentTime.getSeconds() < 10 ? "0" : "") + currentTime.getSeconds();
+        }, 1000);
+    </script>
+</body>
+</html>

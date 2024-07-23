@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    font-size: 35px;
+    background-color: rgb(179, 221, 245);
+}
+.container{
+    height: 80vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+.text{
+    color: rgb(20, 96, 209);
+}
+#size{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    color: rgb(26, 99, 158);
+}
+@media screen and (max-width: 1200px){
+    body{
+        background-color: rgb(90, 255, 90);
+    }
+}
+@media screen and (max-width: 992px){
+    body{
+        background-color: rgb(58, 252, 161);
+    }
+}
+
+@media screen and (max-width: 768px){
+    body{
+        background-color: rgb(252, 58, 252);
+    }
+}
+@media screen and (max-width: 576px){
+    body{
+        background-color: rgb(255, 172, 255);
+    }
+}
